@@ -5,6 +5,10 @@
 // Game of Life
 // Video: https://youtu.be/FWSR_7kZuYg
 
+
+const FRAME_RATE = 2
+const COLS = 5
+const ROWS = 5
 function make2DArray(cols, rows) {
   let arr = new Array(cols);
   for (let i = 0; i < arr.length; i++) {
@@ -16,13 +20,19 @@ function make2DArray(cols, rows) {
 let grid;
 let cols;
 let rows;
-let resolution = 10;
+let resolution = 40;
+
+function preload() {
+
+}
 
 function setup() {
-  createCanvas(600, 400);
-  cols = width / resolution;
-  rows = height / resolution;
-
+  createCanvas(600, 600);
+  frameRate(FRAME_RATE)
+  // cols = width / resolution;
+  // rows = height / resolution;
+  cols = COLS
+  rows = ROWS
   grid = make2DArray(cols, rows);
   for (let i = 0; i < cols; i++) {
     for (let j = 0; j < rows; j++) {
