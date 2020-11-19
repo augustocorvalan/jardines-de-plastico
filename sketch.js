@@ -9,6 +9,9 @@
 const FRAME_RATE = 2
 const COLS = 5
 const ROWS = 5
+const IMAGES = []
+const TOTAL_FLOWERS = 5
+
 function make2DArray(cols, rows) {
   let arr = new Array(cols);
   for (let i = 0; i < arr.length; i++) {
@@ -20,10 +23,15 @@ function make2DArray(cols, rows) {
 let grid;
 let cols;
 let rows;
-let resolution = 40;
+let resolution = 48;
 
 function preload() {
-
+    for (var i=1; i <= TOTAL_FLOWERS; i++) {
+        IMAGES.push(
+            loadImage(`/assets/flowers/${i}.png`)
+        )
+    }
+    console.log("!", IMAGES)
 }
 
 function setup() {
@@ -41,6 +49,15 @@ function setup() {
   }
 }
 
+function drawFlowers(x, y) {
+    image(IMAGES[0], x, y, resolution, resolution)
+}
+function drawSanity(x, y) {
+    fill(255);
+    stroke(0);
+    rect(x, y, resolution - 1, resolution - 1);
+}
+
 function draw() {
   background(0);
 
@@ -49,9 +66,8 @@ function draw() {
       let x = i * resolution;
       let y = j * resolution;
       if (grid[i][j] == 1) {
-        fill(255);
-        stroke(0);
-        rect(x, y, resolution - 1, resolution - 1);
+        drawFlowers(x, y)
+        // drawSanity(x, y)
       }
     }
   }
