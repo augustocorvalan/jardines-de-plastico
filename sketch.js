@@ -6,9 +6,9 @@
 // Video: https://youtu.be/FWSR_7kZuYg
 
 
-const FRAME_RATE = 1
-const COLS = 5
-const ROWS = 5
+const FRAME_RATE = 0.25
+const COLS = 10 
+const ROWS = 30 
 const IMAGES = []
 const TOTAL_FLOWERS = 5
 const BG_COLOR = "#fff"
@@ -25,6 +25,7 @@ let grid;
 let cols;
 let rows;
 let resolution = 32;
+let generation = 0;
 
 function preload() {
     for (var i=1; i <= TOTAL_FLOWERS; i++) {
@@ -35,12 +36,22 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(600, 1200);
   frameRate(FRAME_RATE)
   // cols = width / resolution;
   // rows = height / resolution;
   cols = COLS
   rows = ROWS
+  // grid = make2DArray(cols, rows);
+  // for (let i = 0; i < cols; i++) {
+  //   for (let j = 0; j < rows; j++) {
+  //     grid[i][j] = floor(random(2));
+  //   }
+  // }
+  resetGrid()
+}
+
+function resetGrid() {
   grid = make2DArray(cols, rows);
   for (let i = 0; i < cols; i++) {
     for (let j = 0; j < rows; j++) {
@@ -62,7 +73,7 @@ function draw() {
   background(BG_COLOR);
 
   push()
-  translate(width/4, height/4)
+  translate(width/4 - resolution/2, 0)
   for (let i = 0; i < cols; i++) {
     for (let j = 0; j < rows; j++) {
       let x = i * resolution;
