@@ -6,11 +6,12 @@
 // Video: https://youtu.be/FWSR_7kZuYg
 
 
-const FRAME_RATE = 2
+const FRAME_RATE = 1
 const COLS = 5
 const ROWS = 5
 const IMAGES = []
 const TOTAL_FLOWERS = 5
+const BG_COLOR = "#fff"
 
 function make2DArray(cols, rows) {
   let arr = new Array(cols);
@@ -23,7 +24,7 @@ function make2DArray(cols, rows) {
 let grid;
 let cols;
 let rows;
-let resolution = 48;
+let resolution = 32;
 
 function preload() {
     for (var i=1; i <= TOTAL_FLOWERS; i++) {
@@ -31,7 +32,6 @@ function preload() {
             loadImage(`/assets/flowers/${i}.png`)
         )
     }
-    console.log("!", IMAGES)
 }
 
 function setup() {
@@ -59,8 +59,10 @@ function drawSanity(x, y) {
 }
 
 function draw() {
-  background(0);
+  background(BG_COLOR);
 
+  push()
+  translate(width/4, height/4)
   for (let i = 0; i < cols; i++) {
     for (let j = 0; j < rows; j++) {
       let x = i * resolution;
@@ -71,6 +73,7 @@ function draw() {
       }
     }
   }
+  pop()
 
   let next = make2DArray(cols, rows);
 
