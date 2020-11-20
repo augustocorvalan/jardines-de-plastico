@@ -193,6 +193,7 @@ const LABERINTO_PHRASES = [
 
 ]
 
+setInterval(start, INTERVAL)
 window.addEventListener("click", function(event) {
 	if (GENERATION === 0) {
 		start()
