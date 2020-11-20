@@ -17,8 +17,8 @@ function make2DArray(cols, rows) {
   let arr = new Array(cols);
   for (let i = 0; i < arr.length; i++) {
     arr[i] = new Array(rows);
-  }
-  return arr;
+}
+return arr;
 }
 
 let grid;
@@ -31,12 +31,12 @@ function preload() {
     for (var i=1; i <= TOTAL_FLOWERS; i++) {
         IMAGES.push(
             loadImage(`/assets/flowers/${i}.png`)
-        )
+            )
     }
 }
 
 function setup() {
-  createCanvas(600, 1200);
+  const canvas = createCanvas(600, 1200);
   frameRate(FRAME_RATE)
   // cols = width / resolution;
   // rows = height / resolution;
@@ -56,8 +56,8 @@ function resetGrid() {
   for (let i = 0; i < cols; i++) {
     for (let j = 0; j < rows; j++) {
       grid[i][j] = floor(random(2));
-    }
   }
+}
 }
 
 function drawFlowers(x, y) {
@@ -81,12 +81,12 @@ function draw() {
       if (grid[i][j] == 1) {
         drawFlowers(x, y)
         // drawSanity(x, y)
-      }
     }
-  }
-  pop()
+}
+}
+pop()
 
-  let next = make2DArray(cols, rows);
+let next = make2DArray(cols, rows);
 
   // Compute next based on grid
   for (let i = 0; i < cols; i++) {
@@ -98,15 +98,15 @@ function draw() {
 
       if (state == 0 && neighbors == 3) {
         next[i][j] = 1;
-      } else if (state == 1 && (neighbors < 2 || neighbors > 3)) {
+    } else if (state == 1 && (neighbors < 2 || neighbors > 3)) {
         next[i][j] = 0;
-      } else {
+    } else {
         next[i][j] = state;
-      }
     }
-  }
+}
+}
 
-  grid = next;
+grid = next;
 }
 
 function countNeighbors(grid, x, y) {
@@ -116,8 +116,8 @@ function countNeighbors(grid, x, y) {
       let col = (x + i + cols) % cols;
       let row = (y + j + rows) % rows;
       sum += grid[col][row];
-    }
   }
-  sum -= grid[x][y];
-  return sum;
+}
+sum -= grid[x][y];
+return sum;
 }
