@@ -11,6 +11,7 @@
 	<style>
 		body {
 			margin: 1.5rem;
+			font-family: 'IM Fell Double Pica', serif;
 		}
 		.p5Canvas {
 			margin: 0 auto;
@@ -18,24 +19,38 @@
 		}
 		h3 {
 			/*font-family: 'Major Mono Display', monospace;*/
-			font-family: 'IM Fell Double Pica', serif;
 			text-transform: capitalize;
 			text-align: center;
 			font-size: 2rem;
 			margin: 0;
 			max-width: 250px;
+			text-align: left;
+			line-height: 1.5;
+			letter-spacing: 1px;
 		}
 
 		#jardin { 
 			position: absolute;
-			top: 5rem;
-			left: 5rem;
+			top: 15vh;
+			left: 5vw;
 		}
 
 		#laberinto {
 			position: absolute;
-			top: 5rem;
-			right: 5rem;
+			top: 55vh;
+			left: 5vw;
+		}
+
+		footer {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			display: flex;
+			justify-content: space-around;
+			font-size: 0.85rem;
+		}
+		footer p {
+			padding-left: 1rem;
 		}
 	</style>
 
@@ -47,7 +62,14 @@
 </head>
 <body>
 	<h3 id="jardin">Un Jardín de Plástico</h3>
-	<h3 id="laberinto">Un Laberinto de Plástico</h3>
+	<h3 id="laberinto"></h3>
+	<footer>
+		<p>made for <a href="https://www.recurse.com/directory/3765-augusto-corvalan">Recurse Center</a> generative art & music week
+		</p>
+		<p>by <a href="augustocorvalan.github.io/">augusto corvalan</a></p>
+		<p>| thanks to dr. mario juanes for the help</p>
+
+	</footer>
 
 	<script type="text/javascript" src="dom.js"></script>
 </body>

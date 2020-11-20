@@ -1,9 +1,14 @@
-const INTERVAL = 4000
+const INTERVAL = 7500
 let GENERATION = 0;
 
 function start() {
-	replaceText("jardin", chooseText(JARDIN_PHRASES, GENERATION))
-	replaceText("laberinto", chooseText(LABERINTO_PHRASES, GENERATION))
+
+	// if (GENERATION % 2 === 0) {
+		replaceText("jardin", chooseText(JARDIN_PHRASES, GENERATION))
+
+	//  } else if (GENERATION > 0) {
+	// 	replaceText("laberinto", chooseText(LABERINTO_PHRASES, GENERATION-1))
+	// }
 
 	GENERATION++
 }
@@ -26,7 +31,12 @@ function chooseText(texts, seed) {
 }
 
 const JARDIN_PHRASES = [
+"Un jardín de Plástico para pensar",
 "Un jardín de Plástico para pensar de la historia",
+
+"Un jardín de Plástico para pensar de la historia",
+
+"Un jardín de Plástico para olvidarse de la historia",
 
 "Un jardín de Plástico para pensar de la historia y perderse",
 
@@ -38,19 +48,27 @@ const JARDIN_PHRASES = [
 
 "Un jardín de Plástico para perderse y perderse",
 
+"Un laberinto de Plástico para pensar de la posibilidad",
+
+"Un laberinto de Plástico para pensar de la posibilidad y perderse",
+
+"Un laberinto de Plástico para pensar de la repetición",
+
+"Un laberinto de Plástico para pensar de la repetición y perderse",
+
+"Un laberinto de Plástico para pensar de la imaginación",
+
+"Un laberinto de Plástico para pensar de la paradoja",
+
+"Un laberinto de Plástico para olvidarse de la casualidad",
+
+"Un laberinto de Plástico para olvidarse de la contradicción",
+
+"pero todo los laberintos tambien contienen jardines",
+
+
+"Un jardín de Plástico",
 "Un jardín de Plástico para soledad",
-
-"Un jardín de Plástico para soledad y amor",
-
-"Un jardín de Plástico para soledad y conflicto",
-
-"Un jardín de Plástico para soledad y esperanza",
-
-"Un jardín de Plástico para soledad y nomadismo",
-
-"Un jardín de Plástico para soledad y soledad",
-
-"Un jardín de Plástico para soledad y solitud",
 
 "Un jardín de Plástico para solitud",
 
@@ -62,12 +80,10 @@ const JARDIN_PHRASES = [
 
 "Un jardín de Plástico para solitud y nomadismo",
 
-"Un jardín de Plástico para solitud y soledad",
-
 "Un jardín de Plástico para solitud y solitud",
-]
 
-const LABERINTO_PHRASES = [
+"Un laberinto de Plástico para pensar de la absurdidad",
+
 "Un laberinto de Plástico para pensar de la absurdidad",
 
 "Un laberinto de Plástico para pensar de la absurdidad y perderse",
@@ -82,9 +98,22 @@ const LABERINTO_PHRASES = [
 
 "Un laberinto de Plástico para pensar de la historia",
 
-"Un laberinto de Plástico para pensar de la historia y perderse",
+"Un laberinto de Plástico para pensar de la paradoja y perderse",
+]
 
-"Un laberinto de Plástico para pensar de la imaginación",
+const LABERINTO_PHRASES = [
+"y todos los jardines son, a su manera, laberintos tambien",
+"Un Laberinto de Plástico",
+
+
+
+"Un laberinto de Plástico para pensar de la suerte",
+
+"Un laberinto de Plástico para pensar de la suerte y perderse",
+
+"Un laberinto de Plástico para pensar de las memorias",
+
+"Un laberinto de Plástico para pensar de las memorias y perderse",
 
 "Un laberinto de Plástico para pensar de la imaginación y perderse",
 
@@ -96,25 +125,6 @@ const LABERINTO_PHRASES = [
 
 "Un laberinto de Plástico para pensar de la oportunidad y perderse",
 
-"Un laberinto de Plástico para pensar de la paradoja",
-
-"Un laberinto de Plástico para pensar de la paradoja y perderse",
-
-"Un laberinto de Plástico para pensar de la posibilidad",
-
-"Un laberinto de Plástico para pensar de la posibilidad y perderse",
-
-"Un laberinto de Plástico para pensar de la repetición",
-
-"Un laberinto de Plástico para pensar de la repetición y perderse",
-
-"Un laberinto de Plástico para pensar de la suerte",
-
-"Un laberinto de Plástico para pensar de la suerte y perderse",
-
-"Un laberinto de Plástico para pensar de las memorias",
-
-"Un laberinto de Plástico para pensar de las memorias y perderse",
 
 "Un laberinto de Plástico para pensar del contrasentido",
 
@@ -131,11 +141,9 @@ const LABERINTO_PHRASES = [
 
 "Un laberinto de Plástico para olvidarse de la absurdidad y perderse",
 
-"Un laberinto de Plástico para olvidarse de la casualidad",
 
 "Un laberinto de Plástico para olvidarse de la casualidad y perderse",
 
-"Un laberinto de Plástico para olvidarse de la contradicción",
 
 "Un laberinto de Plástico para olvidarse de la contradicción y perderse",
 
@@ -184,4 +192,10 @@ const LABERINTO_PHRASES = [
 "Un laberinto de Plástico para olvidarse del riesgo y perderse",
 
 ]
-setInterval(start, INTERVAL)
+
+window.addEventListener("click", function(event) {
+	if (GENERATION === 0) {
+		start()
+		setInterval(start, INTERVAL)
+	}
+});
