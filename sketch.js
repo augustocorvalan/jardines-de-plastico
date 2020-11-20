@@ -13,6 +13,7 @@ const IMAGES = []
 const TOTAL_FLOWERS = 32
 const BG_COLOR = "#fff"
 const RESOLUTION = 48;
+const ASSET_ROOT = "https://augustocorvalan.github.io/jardines-de-plastico"
 let GRIDS = [];
 
 class Garden {
@@ -111,7 +112,7 @@ function make2DArray(cols, rows) {
 function preload() {
     for (var i=1; i <= TOTAL_FLOWERS; i++) {
         IMAGES.push(
-            loadImage(`/assets/flowers/${i}.png`)
+            loadImage(`${ASSET_ROOT}/assets/flowers/${i}.png`)
         )
     }
 }
