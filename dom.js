@@ -40,13 +40,9 @@ const JARDIN_PHRASES = [
 
 "Un jardín de Plástico para pensar de la historia y perderse",
 
-"Un jardín de Plástico para pensar de las memorias",
-
-"Un jardín de Plástico para pensar de las memorias y perderse",
-
 "Un jardín de Plástico para perderse",
 
-"Un jardín de Plástico para perderse y perderse",
+"y todos los jardines son, a su manera, laberintos tambien",
 
 "Un laberinto de Plástico para pensar de la posibilidad",
 
@@ -66,8 +62,6 @@ const JARDIN_PHRASES = [
 
 "pero todo los laberintos tambien contienen jardines",
 
-
-"Un jardín de Plástico",
 "Un jardín de Plástico para soledad",
 
 "Un jardín de Plástico para solitud",
@@ -193,7 +187,7 @@ const LABERINTO_PHRASES = [
 
 ]
 
-// setInterval(start, INTERVAL)
+setInterval(start, INTERVAL)
 window.addEventListener("click", function(event) {
 	if (GENERATION === 0) {
 		start()
