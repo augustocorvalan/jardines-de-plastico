@@ -6,9 +6,9 @@
 // Video: https://youtu.be/FWSR_7kZuYg
 
 
-const FRAME_RATE = 0.25
-const COLS = 10 
-const ROWS = 30 
+const FRAME_RATE = 2
+const COLS = 16 
+const ROWS = 60 
 const IMAGES = []
 const TOTAL_FLOWERS = 5
 const BG_COLOR = "#fff"
@@ -24,7 +24,7 @@ return arr;
 let grid;
 let cols;
 let rows;
-let resolution = 32;
+let resolution = 12;
 let generation = 0;
 
 function preload() {
@@ -37,6 +37,7 @@ function preload() {
 
 function setup() {
   const canvas = createCanvas(600, 1200);
+  // canvas.parent('canvasForHTML');
   frameRate(FRAME_RATE)
   // cols = width / resolution;
   // rows = height / resolution;

@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica&display=swap" rel="stylesheet">
 	<style>
 		body {
 			margin: 1.5rem;
@@ -15,10 +17,25 @@
 			display: block;
 		}
 		h3 {
-			font-family: 'Major Mono Display', monospace;
+			/*font-family: 'Major Mono Display', monospace;*/
+			font-family: 'IM Fell Double Pica', serif;
+			text-transform: capitalize;
 			text-align: center;
 			font-size: 2rem;
 			margin: 0;
+			max-width: 250px;
+		}
+
+		#jardin { 
+			position: absolute;
+			top: 5rem;
+			left: 5rem;
+		}
+
+		#laberinto {
+			position: absolute;
+			top: 5rem;
+			right: 5rem;
 		}
 	</style>
 
@@ -29,7 +46,9 @@
 	<script type="text/javascript" src="sketch.js"></script>
 </head>
 <body>
-	<h3>Un Jardín de Plástico</h3>
+	<h3 id="jardin">Un Jardín de Plástico</h3>
+	<h3 id="laberinto">Un Laberinto de Plástico</h3>
 
+	<script type="text/javascript" src="dom.js"></script>
 </body>
 </html>
